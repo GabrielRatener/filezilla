@@ -660,7 +660,7 @@ checkmodifications_loopbegin:
 
 			if(COptions::Get()->GetOptionVal(OPTION_NOPROMPTTOUPLOAD)){
 				UploadFile(CEditHandler::fileType(i), iter, !remove);
-				return;
+				continue;
 			}
 				
 
