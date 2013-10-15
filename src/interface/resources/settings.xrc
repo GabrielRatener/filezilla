@@ -1186,6 +1186,14 @@
         <size>0,5</size>
       </object>
       <object class="sizeritem">
+        <object class="wxCheckBox" name="ID_NOPROMPTTOUPLOAD">
+          <label>Upload edited files without prompting</label>
+        </object>
+      </object>
+      <object class="spacer">
+        <size>0,5</size>
+      </object>
+      <object class="sizeritem">
         <object class="wxFlexGridSizer">
           <cols>1</cols>
           <object class="sizeritem">
