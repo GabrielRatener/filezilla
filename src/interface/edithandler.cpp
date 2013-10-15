@@ -658,6 +658,12 @@ checkmodifications_loopbegin:
 
 			// File has changed, ask user what to do
 
+			if(COptions::Get()->GetOptionVal(OPTION_NOPROMPTTOUPLOAD)){
+				UploadFile(CEditHandler::fileType(i), iter, !remove);
+				goto checkmodifications_loopbegin;
+			}
+				
+
 			m_busyTimer.Stop();
 			wxMouseState mouseState = wxGetMouseState();
 			if (mouseState.LeftDown() || mouseState.MiddleDown() || mouseState.RightDown())
