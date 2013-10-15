@@ -18,6 +18,8 @@ bool COptionsPageFileExists::LoadPage()
 		ulAction = 0;
 	SetChoice(XRCID("ID_UPLOAD_ACTION"), ulAction, failure);
 
+	SetCheck(XRCID("ID_NOPROMPTTOUPLOAD"), m_pOptions->GetOptionVal(OPTION_NOPROMPTTOUPLOAD) ? true : false, failure);
+
 	SetCheck(XRCID("ID_ASCIIRESUME"), m_pOptions->GetOptionVal(OPTION_ASCIIRESUME) ? true : false, failure);
 	
 	return !failure;
@@ -35,6 +37,8 @@ bool COptionsPageFileExists::SavePage()
 		ulAction = 0;
 	m_pOptions->SetOption(OPTION_FILEEXISTS_UPLOAD, ulAction);
 
+	m_pOptions->SetOption(OPTION_NOPROMPTTOUPLOAD, GetCheck(XRCID("ID_NOPROMPTTOUPLOAD")));
+	
 	m_pOptions->SetOption(OPTION_ASCIIRESUME, GetCheck(XRCID("ID_ASCIIRESUME")));
 	return true;
 }
